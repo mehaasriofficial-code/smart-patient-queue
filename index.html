@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Patient Queue & Medicine Reminder</title>
+<meta name="description" content="A static, in-browser patient queue and medicine reminder system — register patients, track live tokens and manage medicine schedules with no backend required.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg>
+      </span>
+      <span class="brand-name">Smart Patient <span>Queue</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="queue.html">Queue</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+        <li><a href="doctor.html">Doctor</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow-pill"><span class="dot"></span> Runs entirely in your browser — no server</span>
+        <h1>Smart Patient Queue &amp; Medicine Reminder</h1>
+        <p class="hero-lede">Register patients, follow the live token queue, and keep medicine schedules on track — a lightweight clinic workflow that works offline, with no backend or database behind it.</p>
+        <div class="hero-actions">
+          <a href="register.html" class="btn btn-accent">Get started</a>
+          <a href="dashboard.html" class="btn btn-outline">View dashboard</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b id="statPatients">5</b><span>Patients in today's queue</span></div>
+          <div class="hero-stat"><b>0s</b><span>Server round-trips</span></div>
+          <div class="hero-stat"><b>100%</b><span>Data stays on-device</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="mock-card">
+          <div class="mock-card-head">
+            <h3>Live queue status</h3>
+            <span class="live-tag"><span class="dot"></span> LIVE</span>
+          </div>
+          <div class="mock-token-row">
+            <div class="mock-token now"><span class="lbl">Now serving</span><span class="num">A03</span></div>
+            <div class="mock-token"><span class="lbl">Your token</span><span class="num">A05</span></div>
+          </div>
+          <div class="mock-progress">
+            <div class="bar"><div class="fill"></div></div>
+            <div class="cap"><span>2 patients ahead</span><span>~10 min wait</span></div>
+          </div>
+        </div>
+        <div class="float-chip a">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#21875A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Token A01 checked in
+        </div>
+        <div class="float-chip b">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#17493F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Next dose in 25 min
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Four steps carry a patient from check-in to medicine tracking, all saved locally in the browser.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-num">Step 01</span><h4>Register at the desk</h4><p>Enter name, age, phone and department. A queue token is generated instantly.</p></div>
+        <div class="step"><span class="step-num">Step 02</span><h4>Track your position</h4><p>Watch the live queue move and see your estimated waiting time update.</p></div>
+        <div class="step"><span class="step-num">Step 03</span><h4>Doctor adds a prescription</h4><p>The doctor logs medicines, dosage, timing and duration against your token.</p></div>
+        <div class="step"><span class="step-num">Step 04</span><h4>Follow the medicine plan</h4><p>Mark each dose taken or missed and see the full schedule on your dashboard.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built around three everyday clinic problems</h2>
+        <p>Each feature mirrors a real front-desk task — just without the paperwork.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h4>Smart patient queue</h4>
+          <p>A digital token system replaces the paper slip, with live position and wait-time estimates.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 1 1 7-7l1 1 1-1a4.95 4.95 0 1 1 7 7l-9 9-1.5-1.5"/></svg></div>
+          <h4>Medicine reminders</h4>
+          <p>Every dose gets a time slot and a status — taken, missed or upcoming — tracked on a visual timeline.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6M9 16h6M9 8h1"/><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/></svg></div>
+          <h4>Doctor prescriptions</h4>
+          <p>Doctors attach medicines to a patient's token directly, building a clean prescription record.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="benefits">
+    <div class="wrap">
+      <div class="stats-band">
+        <div class="stat"><b>0</b><span>Backend servers required</span></div>
+        <div class="stat"><b id="statTokens">5</b><span>Tokens issued today</span></div>
+        <div class="stat"><b id="statMeds">4</b><span>Medicine entries tracked</span></div>
+        <div class="stat"><b>3</b><span>Roles supported: patient, desk, doctor</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why a static build</h2>
+        <p>No sign-ups, no servers to maintain, no data leaving the device — useful for a demo, a viva, or a clinic with unreliable connectivity.</p>
+      </div>
+      <div class="grid-3">
+        <div class="panel panel-tight">
+          <h4 style="margin-bottom:8px;">Works offline</h4>
+          <p style="color:var(--ink-soft); font-size:.92rem;">Once loaded, every page keeps working without an internet connection.</p>
+        </div>
+        <div class="panel panel-tight">
+          <h4 style="margin-bottom:8px;">Deploys anywhere</h4>
+          <p style="color:var(--ink-soft); font-size:.92rem;">Plain HTML, CSS and JavaScript — host it on GitHub Pages, Netlify or Vercel in minutes.</p>
+        </div>
+        <div class="panel panel-tight">
+          <h4 style="margin-bottom:8px;">Transparent data</h4>
+          <p style="color:var(--ink-soft); font-size:.92rem;">Everything lives in the browser's local storage, visible and resettable at any time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="panel cta-band">
+        <h2>Ready to see the queue move?</h2>
+        <p>Register a patient and follow their token through the whole flow.</p>
+        <div class="cta-actions">
+          <a href="register.html" class="btn btn-accent">Register a patient</a>
+          <a href="queue.html" class="btn btn-outline">Open live queue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div style="max-width:320px;">
+        <span class="brand-name">Smart Patient <span>Queue</span></span>
+        <p style="color:var(--ink-soft); font-size:.9rem; margin-top:10px;">A static demo of a clinic queue and medicine reminder workflow. No backend, no accounts — just this browser.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Pages</h5>
+          <ul>
+            <li><a href="register.html">Register patient</a></li>
+            <li><a href="queue.html">Live queue</a></li>
+            <li><a href="medicine.html">Medicine reminder</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Roles</h5>
+          <ul>
+            <li><a href="doctor.html">Doctor dashboard</a></li>
+            <li><a href="dashboard.html">Patient dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Static demo project — all data stored locally in this browser.</span>
+      <button class="btn btn-ghost btn-sm" data-reset-demo type="button">Reset demo data</button>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="confirmModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h3 data-modal-title id="modalTitle">Are you sure?</h3>
+    <p data-modal-body></p>
+    <div class="modal-actions">
+      <button class="btn btn-outline btn-sm" data-modal-close type="button">Cancel</button>
+      <button class="btn btn-danger btn-sm" data-modal-confirm type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const patients = getJSON(STORE.patients, []);
+    const meds = getJSON(STORE.medicines, []);
+    document.getElementById('statPatients').textContent = patients.length;
+    document.getElementById('statTokens').textContent = patients.length;
+    document.getElementById('statMeds').textContent = meds.length;
+  });
+</script>
+</body>
+</html>

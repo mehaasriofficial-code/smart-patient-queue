@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Queue — Smart Patient Queue</title>
+<meta name="description" content="Track the live patient queue — current token, your position and estimated waiting time.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg></span>
+      <span class="brand-name">Smart Patient <span>Queue</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="queue.html" class="active">Queue</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+        <li><a href="doctor.html">Doctor</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Queue</p>
+    <h1>Live queue status</h1>
+    <p>Follow the token being served right now and see how far your own token is from the front.</p>
+  </div>
+
+  <div class="wrap section" style="padding-top:26px;">
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Queue overview</h2>
+        <span class="live-tag"><span class="dot"></span> LIVE</span>
+      </div>
+
+      <div class="token-grid">
+        <div class="token-box hero-token"><span class="lbl">Current token</span><span class="num" id="curToken">—</span></div>
+        <div class="token-box"><span class="lbl">Your token</span><span class="num" id="myToken">—</span></div>
+        <div class="token-box"><span class="lbl">Patients before you</span><span class="num" id="beforeCount">—</span></div>
+        <div class="token-box"><span class="lbl">Estimated wait</span><span class="num" id="waitTime">—</span></div>
+      </div>
+
+      <div class="mock-progress" style="margin-top:26px;">
+        <div class="bar"><div class="fill" id="progressFill"></div></div>
+        <div class="cap"><span id="progressCap">—</span><span id="statusPill" class="badge badge-wait">Waiting</span></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3 style="font-size:1rem; margin-bottom:12px;">Token order today</h3>
+      <div class="queue-strip" id="queueStrip"></div>
+
+      <div class="hero-actions" style="margin-top:24px;">
+        <button class="btn btn-primary" id="refreshBtn" type="button">Refresh queue</button>
+        <button class="btn btn-outline" id="advanceBtn" type="button">Call next token</button>
+        <a href="register.html" class="btn btn-ghost">Join the queue</a>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:24px;">
+      <h3 style="font-size:1.05rem; margin-bottom:14px;">All patients today</h3>
+      <div id="patientTable"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-bottom">
+    <span>Static demo project — all data stored locally in this browser.</span>
+    <button class="btn btn-ghost btn-sm" data-reset-demo type="button">Reset demo data</button>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="confirmModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h3 data-modal-title id="modalTitle">Are you sure?</h3>
+    <p data-modal-body></p>
+    <div class="modal-actions">
+      <button class="btn btn-outline btn-sm" data-modal-close type="button">Cancel</button>
+      <button class="btn btn-danger btn-sm" data-modal-confirm type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/queue.js"></script>
+</body>
+</html>

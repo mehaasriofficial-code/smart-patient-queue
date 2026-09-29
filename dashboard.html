@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Dashboard — Smart Patient Queue</title>
+<meta name="description" content="A single view of your queue position, medicine status and prescriptions.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg></span>
+      <span class="brand-name">Smart Patient <span>Queue</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="queue.html">Queue</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+        <li><a href="doctor.html">Doctor</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Dashboard</p>
+    <h1>Your dashboard</h1>
+    <p>Everything about your visit in one place — queue position, today's medicines and your prescriptions.</p>
+  </div>
+
+  <div class="wrap section" style="padding-top:26px;">
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2 id="patientName">—</h2>
+        <span class="badge badge-primary" id="patientToken">—</span>
+      </div>
+      <div class="token-grid">
+        <div class="token-box hero-token"><span class="lbl">Your token</span><span class="num" id="dToken">—</span></div>
+        <div class="token-box"><span class="lbl">Now serving</span><span class="num" id="dCurrent">—</span></div>
+        <div class="token-box"><span class="lbl">Ahead of you</span><span class="num" id="dBefore">—</span></div>
+        <div class="token-box"><span class="lbl">Est. wait</span><span class="num" id="dWait">—</span></div>
+      </div>
+      <div class="hero-actions" style="margin-top:22px;">
+        <a href="queue.html" class="btn btn-primary btn-sm">Open live queue</a>
+        <a href="medicine.html" class="btn btn-outline btn-sm">Open medicine reminder</a>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:24px; align-items:start;">
+      <div class="panel">
+        <div class="panel-head"><h3>Today's medicines</h3></div>
+        <div id="medSummary"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Prescriptions</h3></div>
+        <div id="rxSummary"></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-bottom">
+    <span>Static demo project — all data stored locally in this browser.</span>
+    <button class="btn btn-ghost btn-sm" data-reset-demo type="button">Reset demo data</button>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="confirmModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h3 data-modal-title id="modalTitle">Are you sure?</h3>
+    <p data-modal-body></p>
+    <div class="modal-actions">
+      <button class="btn btn-outline btn-sm" data-modal-close type="button">Cancel</button>
+      <button class="btn btn-danger btn-sm" data-modal-confirm type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

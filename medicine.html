@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Reminder — Smart Patient Queue</title>
+<meta name="description" content="Track today's medicine schedule — mark doses taken or missed and view the full timeline.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg></span>
+      <span class="brand-name">Smart Patient <span>Queue</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="queue.html">Queue</a></li>
+        <li><a href="medicine.html" class="active">Medicine</a></li>
+        <li><a href="doctor.html">Doctor</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Medicine reminder</p>
+    <h1>Medicine reminder</h1>
+    <p>Today's prescribed medicines for token <strong id="headToken">—</strong>, with status you can update as doses are taken.</p>
+  </div>
+
+  <div class="wrap section" style="padding-top:26px;">
+    <div class="grid-2" style="grid-template-columns:1fr 1fr; align-items:start;">
+
+      <div class="panel">
+        <div class="panel-head"><h2>Status overview</h2></div>
+        <div class="grid-3" style="grid-template-columns:repeat(3,1fr);">
+          <div class="token-box" style="background:var(--good-tint);">
+            <span class="lbl" style="color:var(--good);">Taken</span>
+            <span class="num" style="color:var(--good); font-size:1.6rem;" id="countTaken">0</span>
+          </div>
+          <div class="token-box" style="background:var(--bad-tint);">
+            <span class="lbl" style="color:var(--bad);">Missed</span>
+            <span class="num" style="color:var(--bad); font-size:1.6rem;" id="countMissed">0</span>
+          </div>
+          <div class="token-box" style="background:var(--wait-tint);">
+            <span class="lbl" style="color:var(--wait);">Upcoming</span>
+            <span class="num" style="color:var(--wait); font-size:1.6rem;" id="countUpcoming">0</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <h3 style="font-size:1rem; margin-bottom:6px;">Next dose</h3>
+        <div id="nextDose"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Today's schedule</h2></div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-bottom">
+    <span>Static demo project — all data stored locally in this browser.</span>
+    <button class="btn btn-ghost btn-sm" data-reset-demo type="button">Reset demo data</button>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="confirmModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h3 data-modal-title id="modalTitle">Are you sure?</h3>
+    <p data-modal-body></p>
+    <div class="modal-actions">
+      <button class="btn btn-outline btn-sm" data-modal-close type="button">Cancel</button>
+      <button class="btn btn-danger btn-sm" data-modal-confirm type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/medicine.js"></script>
+</body>
+</html>
